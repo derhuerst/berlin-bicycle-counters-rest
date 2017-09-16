@@ -5,12 +5,17 @@ const corser = require('corser')
 const compression = require('compression')
 const nocache = require('nocache')
 
+const orgs = require('./lib/orgs')
+const org = require('./lib/org')
+const counter = require('./lib/counter')
+
 const api = express()
 api.use(corser.create()) // CORS
 api.use(compression())
 
 api.get('/orgs/:id', nocache(), org)
 api.get('/orgs', orgs)
+api.get('/orgs/:orgId/counters/:id', nocache(), counter)
 
 api.use((err, req, res, next) => {
 	if (process.env.NODE_ENV === 'dev') console.error(err)
