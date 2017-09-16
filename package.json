@@ -1,0 +1,29 @@
+{
+	"private": true,
+	"name": "berlin-bicycle-counters-rest",
+	"description": "A stupid CORS proxy for Berlin bicycle counters.",
+	"version": "0.1.0",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"berlin",
+		"bicycle",
+		"bike",
+		"cycling"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/berlin-bicycle-counters-rest",
+	"repository": "derhuerst/berlin-bicycle-counters-rest",
+	"bugs": "https://github.com/derhuerst/berlin-bicycle-counters-rest/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=6"
+	},
+	"dependencies": {
+	},
+	"scripts": {
+		"start": "node index.js"
+	}
+}
