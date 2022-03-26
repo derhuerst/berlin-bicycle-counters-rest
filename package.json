@@ -20,7 +20,7 @@
 	"bugs": "https://github.com/derhuerst/berlin-bicycle-counters-rest/issues",
 	"license": "ISC",
 	"engines": {
-		"node": ">=16"
+		"node": "14.x"
 	},
 	"dependencies": {
 		"boom": "^7.3.0",
