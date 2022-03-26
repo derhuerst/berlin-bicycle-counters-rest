@@ -17,7 +17,7 @@ api.get('/orgs', orgs)
 api.get('/orgs/:orgId/counters/:id', counter)
 
 api.use((err, req, res, next) => {
-	if (process.env.NODE_ENV === 'dev') console.error(err)
+	console.error(err)
 	if (res.headersSent) return next()
 	res.status(err.statusCode || 500).json({error: true, msg: err.message})
 	next()

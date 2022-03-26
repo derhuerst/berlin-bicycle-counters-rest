@@ -2,7 +2,7 @@
 	"private": true,
 	"name": "berlin-bicycle-counters-rest",
 	"description": "A stupid CORS proxy for Berlin bicycle counters.",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"main": "index.js",
 	"files": [
 		"index.js",
