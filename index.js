@@ -1,26 +1,11 @@
 'use strict'
 
-const express = require('express')
-const corser = require('corser')
-const compression = require('compression')
+const api = require('./api')
 
-const orgs = require('./lib/orgs')
-const org = require('./lib/org')
-const counter = require('./lib/counter')
-
-const api = express()
-api.use(corser.create()) // CORS
-api.use(compression())
-
-api.get('/orgs/:id', org)
-api.get('/orgs', orgs)
-api.get('/orgs/:orgId/counters/:id', counter)
-
-api.use((err, req, res, next) => {
-	console.error(err)
-	if (res.headersSent) return next()
-	res.status(err.statusCode || 500).json({error: true, msg: err.message})
-	next()
+const server = api.listen(process.env.PORT || 3000, (err) => {
+	if (err) {
+		console.error(err)
+		process.exit(1)
+	}
+	console.info(`listening on port ${server.address().port}`)
 })
-
-api.listen(process.env.PORT || 3000)
